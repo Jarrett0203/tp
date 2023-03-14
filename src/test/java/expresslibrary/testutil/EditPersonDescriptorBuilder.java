@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 
 import expresslibrary.logic.commands.EditCommand.EditPersonDescriptor;
 import expresslibrary.model.person.Address;
+import expresslibrary.model.person.Book;
 import expresslibrary.model.person.Email;
 import expresslibrary.model.person.Name;
 import expresslibrary.model.person.Person;
@@ -36,6 +37,7 @@ public class EditPersonDescriptorBuilder {
         descriptor.setPhone(person.getPhone());
         descriptor.setEmail(person.getEmail());
         descriptor.setAddress(person.getAddress());
+        descriptor.setBook(person.getBook());
         descriptor.setTags(person.getTags());
     }
 
@@ -68,6 +70,11 @@ public class EditPersonDescriptorBuilder {
      */
     public EditPersonDescriptorBuilder withAddress(String address) {
         descriptor.setAddress(new Address(address));
+        return this;
+    }
+
+    public EditPersonDescriptorBuilder withBook(String book) {
+        descriptor.setBook(new Book(book));
         return this;
     }
 
